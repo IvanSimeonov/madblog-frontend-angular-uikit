@@ -1,0 +1,15 @@
+<!-- <p>article-paginator works!</p> -->
+
+<div *ngIf="articlePageDTO">
+<!-- <h1>Total Articles: {{articlePageDTO.totalArticles}}</h1>
+<h1>Total Pages: {{articlePageDTO.totalPages}}</h1> 
+<h1>Current Page: {{articlePageDTO.pageNumber + 1}}</h1> -->
+
+<div class="uk-button-group">
+    <button class="uk-button uk-button-default" (click)="loadPageByNumber(articlePageDTO.pageNumber - 1)">Prev</button>
+    <button class="uk-button uk-button-default" *ngFor="let i of totalPages; let index = index" (click)="loadPageByNumber(index)">{{index + 1}}</button>
+    <button class="uk-button uk-button-default" (click)="loadPageByNumber(articlePageDTO.pageNumber + 1)">Next</button>
+</div>
+
+</div>
+

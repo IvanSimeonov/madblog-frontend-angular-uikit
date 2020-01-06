@@ -8,18 +8,25 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { HomeComponent } from './home/home.component';
 import { ArticleViewComponent } from './article-view/article-view.component';
+import { TestComponent } from './test/test.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ArticlePaginatorComponent } from './article-paginator/article-paginator.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ArticleViewComponent
+    ArticleViewComponent,
+    TestComponent,
+    ArticlePaginatorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ApiModule
+    ApiModule,
+    NgxPaginationModule
   ],
   providers: [{ provide: BASE_PATH, useValue: environment.API_BASE_PATH }],
   bootstrap: [AppComponent]
