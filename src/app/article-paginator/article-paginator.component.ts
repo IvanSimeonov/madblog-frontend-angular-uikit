@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ArticlePageDTO } from '@maddob/madblog-api';
+import { ArticlePageDTO } from '@ivan-gen/blog-api';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 

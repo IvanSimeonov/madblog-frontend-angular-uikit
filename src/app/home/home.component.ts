@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleControllerService, ArticlePageDTO } from '@maddob/madblog-api';
+import { ArticleControllerService, ArticlePageDTO } from '@ivan-gen/blog-api';
 import { Router } from '@angular/router';
 
 
