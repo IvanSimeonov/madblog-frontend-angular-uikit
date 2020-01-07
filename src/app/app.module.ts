@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApiModule, BASE_PATH } from '@ivan-gen/blog-api';
+import { ApiModule, BASE_PATH } from '@ivannicksim/blog-api';
 import { environment } from 'src/environments/environment';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleViewComponent } from './article-view/article-view.component';
 import { TestComponent } from './test/test.component';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { ArticlePaginatorComponent } from './article-paginator/article-paginator.component';
+import { AdminModule } from './admin/admin.module';
+
 
 
 @NgModule({
@@ -23,10 +24,15 @@ import { ArticlePaginatorComponent } from './article-paginator/article-paginator
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     ApiModule,
-    AppRoutingModule,
+    AdminModule,
+  
+    
+    
   ],
+  exports: [HttpClientModule],
   providers: [{ provide: BASE_PATH, useValue: environment.API_BASE_PATH }],
   bootstrap: [AppComponent]
 })

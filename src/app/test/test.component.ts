@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleControllerService, ArticlePageDTO } from '@ivan-gen/blog-api';
+import { ArticleControllerService, ArticlePageDTO } from '@ivannicksim/blog-api';
 
 @Component({
   selector: 'app-test',

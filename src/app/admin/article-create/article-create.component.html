@@ -1,0 +1,69 @@
+<h3>Article Creation:</h3>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+        <label for="title">
+            Title
+        </label>
+        <br/>
+        <input class="uk-input uk-form-width-medium" id="title" type="text" formControlName="title">
+    </div>
+
+    
+    <div>
+        <label for="subtitle">
+            Subtitle
+        </label>
+        <br/>
+        <input class="uk-input uk-form-width-medium" id="subtitle"  type="text" formControlName="subtitle">
+    </div>
+
+    <div>
+        <label for="content">
+            Content
+        </label>
+        <br/>
+        <input class="uk-input uk-form-width-medium" id="content" type="text" formControlName="content">
+    </div>
+
+    <fieldset class="uk-fieldset">
+        <div>
+            <label for="published">
+                Published
+         </label>
+         <br/>
+         <!-- Important -->
+         <!-- {{checkoutForm.controls.published.value}} -->
+        <label><input class="uk-radio uk-form-width-medium" type="radio" value="true"  formControlName="published"> true </label>
+            <label><input class="uk-radio uk-form-width-medium" type="radio" value="false"  formControlName="published"> false</label>
+            <!-- <input class="uk-input uk-form-width-medium" id="published" type="text" formControlName="published"> -->
+        </div>
+    </fieldset>
+
+    <div>
+        <label for="created">
+                Created
+        </label>
+        <br/>
+        <input class="uk-input uk-form-width-medium" id="created" type="text" formControlName="created">
+    </div>
+
+    <div>
+        <label for="coverImage">
+            CoverImage
+        </label>
+        <br/>
+        <input class="uk-input uk-form-width-medium" id="coverImage" type="text" formControlName="coverImage">
+    </div>
+
+    <br/>
+
+    <button class="uk-button uk-button-primary" type="submit">Create</button>
+
+    <h1> TEST {{ checkoutForm.value | json}}</h1>
+     
+
+</form>
+
+

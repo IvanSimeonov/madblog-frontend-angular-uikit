@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleControllerService, ArticleDTO } from '@ivan-gen/blog-api';
+import { ArticleControllerService, ArticleDTO } from '@ivannicksim/blog-api';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
