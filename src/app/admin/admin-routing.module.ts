@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ArticleCreateComponent } from "./article-create/article-create.component";
 import { ArticleTableViewComponent } from "./article-table-view/article-table-view.component";
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "article/table",
     component: ArticleTableViewComponent
+  },
+  {
+    path: "admin",
+    component: AdminViewComponent
   }
 ];
 

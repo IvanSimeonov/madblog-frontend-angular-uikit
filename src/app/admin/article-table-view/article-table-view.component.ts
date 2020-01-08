@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlePageDTO, ArticleService } from '@ivannicksim/blog-api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-table-view',
@@ -10,7 +11,8 @@ export class ArticleTableViewComponent implements OnInit {
 
   articlePageDto: ArticlePageDTO;
 
-  constructor(private articleControllerService: ArticleService) { }
+  constructor(private articleControllerService: ArticleService,
+    private router: Router) { }
 
   ngOnInit() {
 
@@ -26,6 +28,14 @@ export class ArticleTableViewComponent implements OnInit {
 
   editById(article){
     console.log(article.id);
+  }
+
+  openAdminPage(){
+    this.router.navigate(['/admin'])
+  }
+
+  openHomePage(){
+    this.router.navigate(['/home'])
   }
 
 }

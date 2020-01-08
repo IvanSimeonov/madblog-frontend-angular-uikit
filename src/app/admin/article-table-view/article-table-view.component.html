@@ -1,30 +1,50 @@
+<h1 style="text-align:center;">Admin articles view panel</h1>
+
+<div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <button (click)="openHomePage()" class="uk-button uk-primary-button">Homepage</button>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <button (click)="openAdminPage()" class="uk-button uk-primary-button">Admin Page</button>
+        </div>
+    </div>
+</div>
+
+
+
+
 <div class="uk-overflow-auto">
     <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
         <div *ngIf="articlePageDto">
-                <thead>
-                    <tr>
-                        <th class="uk-table-expand">Id</th>
-                        <th class="uk-table-expand">Title</th>
-                        <th class="uk-table-expand">Subtitle</th>
-                        <th class="uk-table-expand">Published</th>
-                        <th class="uk-table-expand">Edit</th>
-                        <th class="uk-table-expand">Delete</th>
+            <thead>
+                <tr>
+                    <th class="uk-table-expand">Id</th>
+                    <th class="uk-table-expand">Title</th>
+                    <th class="uk-table-expand">Subtitle</th>
+                    <th class="uk-table-expand">Published</th>
+                    <th class="uk-table-expand">Edit</th>
+                    <th class="uk-table-expand">Delete</th>
 
-                    </tr>
+                </tr>
 
-                </thead>
+            </thead>
 
-                <tbody>
+            <tbody>
 
-                    <tr *ngFor="let article of articlePageDto?.articles">
-                        <td class="uk-text-link">{{article?.id}}</td>
-                        <td class="uk-text-link">{{article?.title}}</td>
-                        <td class="uk-text-link">{{article?.subtitle}}</td>
-                        <td class="uk-text-link">{{article?.published}}</td>
-                        <td class="uk-text-link"><button (click)="editById(article)" class="uk-button uk-button-primary">Edit</button></td>
-                        <td class="uk-text-link"><button (click)="deleteById(article)" class="uk-button uk-button-primary">Delete</button></td>
-                    </tr>
-                </tbody>
+                <tr *ngFor="let article of articlePageDto?.articles">
+                    <td class="uk-text-link">{{article?.id}}</td>
+                    <td class="uk-text-link">{{article?.title}}</td>
+                    <td class="uk-text-link">{{article?.subtitle}}</td>
+                    <td class="uk-text-link">{{article?.published}}</td>
+                    <td class="uk-text-link"><button (click)="editById(article)"
+                            class="uk-button uk-button-primary">Edit</button></td>
+                    <td class="uk-text-link"><button (click)="deleteById(article)"
+                            class="uk-button uk-button-primary">Delete</button></td>
+                </tr>
+            </tbody>
         </div>
     </table>
 </div>

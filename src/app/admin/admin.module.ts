@@ -5,11 +5,12 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticleTableViewComponent } from './article-table-view/article-table-view.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 
 
 @NgModule({
-  declarations: [ArticleCreateComponent, ArticleTableViewComponent],
+  declarations: [ArticleCreateComponent, ArticleTableViewComponent, AdminViewComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
