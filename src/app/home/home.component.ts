@@ -39,4 +39,8 @@ export class HomeComponent implements OnInit {
 
   }
 
+  goToAdminPage(){
+    this.router.navigate(['/admin'])
+  }
+
 }
