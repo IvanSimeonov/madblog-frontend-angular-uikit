@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleControllerService, ArticlePageDTO } from '@ivannicksim/blog-api';
+import { ArticleService, ArticlePageDTO } from '@ivannicksim/blog-api';
 import { Router } from '@angular/router';
 
 
@@ -20,13 +20,13 @@ export class HomeComponent implements OnInit {
   title: string;
   counter: number;
 
-  constructor(private articleControllerService: ArticleControllerService,
+  constructor(private articleControllerService: ArticleService,
               private router: Router) { }
 
   ngOnInit() {
     
     
-    this.articleControllerService.getArticlesByPageUsingGET().subscribe(page => this.articlePageDTO = page);
+    this.articleControllerService.getArticlesByPage().subscribe(page => this.articlePageDTO = page);
     
   }
 
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   first(pageNr:number){
-    this.articleControllerService.getArticlesByPageUsingGET(pageNr).subscribe(page => this.articlePageDTO = page);
+    this.articleControllerService.getArticlesByPage(pageNr).subscribe(page => this.articlePageDTO = page);
 
   }
 

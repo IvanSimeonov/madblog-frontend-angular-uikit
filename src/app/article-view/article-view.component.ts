@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleControllerService, ArticleDTO } from '@ivannicksim/blog-api';
+import { ArticleService, ArticleDTO } from '@ivannicksim/blog-api';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ export class ArticleViewComponent implements OnInit {
   id: number;
   article: ArticleDTO;
 
-  constructor(private articleService: ArticleControllerService, private activatedRoute: ActivatedRoute) { }
+  constructor(private articleService: ArticleService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -21,7 +21,7 @@ export class ArticleViewComponent implements OnInit {
       console.log("Id is " + this.id);
     })
     
-      this.articleService.getArticleByIdUsingGET(this.id).subscribe((currArticle: ArticleDTO) =>{
+      this.articleService.getArticleById(this.id).subscribe((currArticle: ArticleDTO) =>{
       this.article = currArticle;
       
     });

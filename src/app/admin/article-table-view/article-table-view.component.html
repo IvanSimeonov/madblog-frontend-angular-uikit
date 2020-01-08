@@ -1,0 +1,30 @@
+<div class="uk-overflow-auto">
+    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+        <div *ngIf="articlePageDto">
+                <thead>
+                    <tr>
+                        <th class="uk-table-expand">Id</th>
+                        <th class="uk-table-expand">Title</th>
+                        <th class="uk-table-expand">Subtitle</th>
+                        <th class="uk-table-expand">Published</th>
+                        <th class="uk-table-expand">Edit</th>
+                        <th class="uk-table-expand">Delete</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let article of articlePageDto?.articles">
+                        <td class="uk-text-link">{{article?.id}}</td>
+                        <td class="uk-text-link">{{article?.title}}</td>
+                        <td class="uk-text-link">{{article?.subtitle}}</td>
+                        <td class="uk-text-link">{{article?.published}}</td>
+                        <td class="uk-text-link"><button (click)="editById(article)" class="uk-button uk-button-primary">Edit</button></td>
+                        <td class="uk-text-link"><button (click)="deleteById(article)" class="uk-button uk-button-primary">Delete</button></td>
+                    </tr>
+                </tbody>
+        </div>
+    </table>
+</div>

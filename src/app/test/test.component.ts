@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleControllerService, ArticlePageDTO } from '@ivannicksim/blog-api';
+import { ArticleService, ArticlePageDTO } from '@ivannicksim/blog-api';
 
 @Component({
   selector: 'app-test',
@@ -11,10 +11,10 @@ export class TestComponent implements OnInit {
   pageNumber: number;
   
 
-  constructor(private articleService: ArticleControllerService) { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
-    this.articleService.getArticlesByPageUsingGET().subscribe((articlePage: ArticlePageDTO) => {
+    this.articleService.getArticlesByPage().subscribe((articlePage: ArticlePageDTO) => {
       console.log(articlePage);
       this.pageNumber = articlePage.pageNumber;
     });

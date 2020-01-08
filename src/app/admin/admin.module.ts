@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ArticleTableViewComponent } from './article-table-view/article-table-view.component';
 
 
 
 @NgModule({
-  declarations: [ArticleCreateComponent],
+  declarations: [ArticleCreateComponent, ArticleTableViewComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -1,51 +1,53 @@
 <h3>Article Creation:</h3>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value,navigateHomePage('home'))">
 
     <div>
         <label for="title">
             Title
         </label>
-        <br/>
-        <input class="uk-input uk-form-width-medium" id="title" type="text" formControlName="title">
+        <br />
+        <input class="uk-input uk-form-width-medium" id="title" type="text" formControlName="title" required>
     </div>
 
-    
+
     <div>
         <label for="subtitle">
             Subtitle
         </label>
-        <br/>
-        <input class="uk-input uk-form-width-medium" id="subtitle"  type="text" formControlName="subtitle">
+        <br />
+        <input class="uk-input uk-form-width-medium" id="subtitle" type="text" formControlName="subtitle" required>
     </div>
 
     <div>
         <label for="content">
             Content
         </label>
-        <br/>
-        <input class="uk-input uk-form-width-medium" id="content" type="text" formControlName="content">
+        <br />
+        <input class="uk-input uk-form-width-medium" id="content" type="text" formControlName="content" required>
     </div>
 
     <fieldset class="uk-fieldset">
         <div>
             <label for="published">
                 Published
-         </label>
-         <br/>
-         <!-- Important -->
-         <!-- {{checkoutForm.controls.published.value}} -->
-        <label><input class="uk-radio uk-form-width-medium" type="radio" value="true"  formControlName="published"> true </label>
-            <label><input class="uk-radio uk-form-width-medium" type="radio" value="false"  formControlName="published"> false</label>
+            </label>
+            <br />
+            <!-- Important -->
+            <!-- {{checkoutForm.controls.published.value}} -->
+            <label><input class="uk-radio uk-form-width-medium" type="radio" value="true" formControlName="published"
+                    required> true </label>
+            <label><input class="uk-radio uk-form-width-medium" type="radio" value="false" formControlName="published"
+                    required> false</label>
             <!-- <input class="uk-input uk-form-width-medium" id="published" type="text" formControlName="published"> -->
         </div>
     </fieldset>
 
     <div>
         <label for="created">
-                Created
+            Created
         </label>
-        <br/>
+        <br />
         <input class="uk-input uk-form-width-medium" id="created" type="text" formControlName="created">
     </div>
 
@@ -53,17 +55,16 @@
         <label for="coverImage">
             CoverImage
         </label>
-        <br/>
+        <br />
         <input class="uk-input uk-form-width-medium" id="coverImage" type="text" formControlName="coverImage">
     </div>
 
-    <br/>
+    <br />
 
-    <button class="uk-button uk-button-primary" type="submit">Create</button>
+    <button class="uk-button uk-button-primary" type="submit" [disabled]="!checkoutForm.valid">Create</button>
+    <button (click)="clearFields()" class="uk-button uk-button-primary" type="button">Clear</button>
 
     <h1> TEST {{ checkoutForm.value | json}}</h1>
-     
+
 
 </form>
-
-
