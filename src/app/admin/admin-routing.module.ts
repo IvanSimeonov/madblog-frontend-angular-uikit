@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: "admin",
     component: AdminViewComponent
+  },
+  {
+    path: "article/edit/:id",
+    component: ArticleCreateComponent
   }
 ];
 

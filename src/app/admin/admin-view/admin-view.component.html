@@ -1,4 +1,10 @@
-<h1 style="text-align:center;">Admin View Panel</h1>
+<div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+     data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
+     data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+     data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
+    <h1>Admin View Panel</h1>
+</div>
 
 <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
     <div>
@@ -9,6 +15,11 @@
     <div>
         <div class="uk-card uk-card-default uk-card-body">
             <button (click)="openArticlesView()" class="uk-button uk-primary-button">Admin Articles View</button>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <button (click)="openCreateArticleView()" class="uk-button uk-primary-button">Create article</button>
         </div>
     </div>
 

@@ -28,6 +28,7 @@ export class ArticleTableViewComponent implements OnInit {
 
   editById(article){
     console.log(article.id);
+    this.router.navigate(['/article/edit', article.id]);
   }
 
   openAdminPage(){

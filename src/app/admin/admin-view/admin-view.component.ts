@@ -20,5 +20,9 @@ export class AdminViewComponent implements OnInit {
   openArticlesView(){
     this.router.navigate(['/article/table'])
   }
+
+  openCreateArticleView(){
+    this.router.navigate(['/article/create'])
+  }
   
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ArticleService } from "@ivannicksim/blog-api";
 import { ArticleDTO } from "@ivannicksim/blog-api";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-article-create",
@@ -16,19 +16,31 @@ export class ArticleCreateComponent implements OnInit {
   constructor(
     private articleService: ArticleService,
     private formBilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     this.checkoutForm = this.formBilder.group({
+      id: "",
       title: "",
       subtitle: "",
       content: "",
       published: "true",
+      featured: "true",
       created: "",
       coverImage: ""
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const articleId = this.activatedRoute.snapshot.paramMap.get("id");
+    console.log(articleId);
+    this.articleService
+      .getArticleById(+articleId)
+      .subscribe((articleDTO: ArticleDTO) => {
+        this.checkoutForm.setValue(articleDTO);
+      });
+    // this.checkoutForm.patchValue({title: currArticle.title});
+  }
 
   onSubmit(articleData) {
     console.warn("The article has been created.", articleData);
@@ -49,4 +61,13 @@ export class ArticleCreateComponent implements OnInit {
   clearFields() {
     this.checkoutForm.reset();
   }
+
+  updateArticle(articleData){
+    console.warn("Article has been updated",articleData);
+    // this.articleService.editArticle(articleData).subscribe((currArticle: ArticleDTO) => {
+    //   this.article = currArticle;
+    //   console.log("Updated article is:",currArticle);
+    // })
+  }
+
 }
