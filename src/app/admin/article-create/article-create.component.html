@@ -62,7 +62,7 @@
     <br />
 
     <button class="uk-button uk-button-primary" type="submit" [disabled]="!checkoutForm.valid">Create</button>
-    <button (click)="updateArticle(checkoutForm)" class="uk-button uk-button-primary" type="button" [disabled]="!checkoutForm.valid">Update</button>
+    <button (click)="updateArticle(checkoutForm.value)" class="uk-button uk-button-primary" type="button" [disabled]="!checkoutForm.valid">Update</button>
     <button (click)="clearFields()" class="uk-button uk-button-primary" type="button">Clear</button>
 
     <h1> TEST {{ checkoutForm.value | json}}</h1>

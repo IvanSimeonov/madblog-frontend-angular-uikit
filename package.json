@@ -19,7 +19,7 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "@ivannicksim/blog-api": "^1.0.5-SNAPSHOT",
+    "@ivannicksim/blog-api": "^1.0.7-SNAPSHOT",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.9.0",

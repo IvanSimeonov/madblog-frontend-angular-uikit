@@ -62,12 +62,12 @@ export class ArticleCreateComponent implements OnInit {
     this.checkoutForm.reset();
   }
 
-  updateArticle(articleData){
+  updateArticle(articleData: ArticleDTO){
     console.warn("Article has been updated",articleData);
-    // this.articleService.editArticle(articleData).subscribe((currArticle: ArticleDTO) => {
-    //   this.article = currArticle;
-    //   console.log("Updated article is:",currArticle);
-    // })
+    this.articleService.editArticle(articleData.id, articleData).subscribe((currArticle: ArticleDTO) => {
+      this.article = currArticle;
+      console.log("Updated article is:",currArticle);
+    })
   }
 
 }
